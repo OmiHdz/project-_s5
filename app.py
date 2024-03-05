@@ -6,7 +6,7 @@ car_data = pd.read_csv('vehicles_us.csv')
 
 st.title('Analysing Car sales dataset')
 
-st.header('mark the checkbox to build Histogram or Scatterplot')
+st.header('Mark the checkbox to build Histogram or Scatterplot')
 
 build_histogram = st.checkbox('Build Histogram')
 build_scatter = st.checkbox('Build Scatterplot')
@@ -22,5 +22,15 @@ if build_scatter:
     st.plotly_chart(fig2)
 
 
-st.caption(
-    'This script was coded by Omar Hernández® for tripleten® Data Science bootcamp ,all rights reserved ')
+st.header('Referenced dataframe  ')
+st.dataframe(car_data.head(5))
+
+st.header('Github repository link')
+st.link_button('Github repository', "https://github.com/OmiHdz/project_s5.git")
+
+
+st.header('Readme')
+st.link_button(
+    'Go', "https://github.com/OmiHdz/project_s5/blob/main/README.md")
+
+st.caption('This script was coded by Omar Hernández® for tripleten® Data Science bootcamp ,all rights reserved. ')
