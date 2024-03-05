@@ -4,19 +4,23 @@ import plotly.express as px
 
 car_data = pd.read_csv('vehicles_us.csv')
 
-st.header('Análisis de carros en estados unidos')
+st.title('Analysing Car sales dataset')
 
-hist_button = st.button('Build Histogram')
-scatter_button = st.button('Build Scatterplot')
+st.header('mark the checkbox to build Histogram or Scatterplot')
 
-if hist_button:
+build_histogram = st.checkbox('Build Histogram')
+build_scatter = st.checkbox('Build Scatterplot')
+
+if build_histogram:
     st.write('Build histogram for vehicle sales dataset')
+    fig = px.histogram(car_data, x='odometer')
+    st.plotly_chart(fig)
 
-    fig1 = px.histogram(car_data, x='odometer')
-
-    st.plotly_chart(fig1)
-
-if scatter_button:
+if build_scatter:
     st.write('Building scatterplot for vehicle sales dataset')
-    fig2 = px.scatter(car_data, x='price')
-    st.plotly_chart()
+    fig2 = px.scatter(car_data, x='odometer', y='price')
+    st.plotly_chart(fig2)
+
+
+st.caption(
+    'This script was coded by Omar Hernández® for tripleten® Data Science bootcamp ,all rights reserved ')
