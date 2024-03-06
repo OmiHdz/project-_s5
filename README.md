@@ -56,6 +56,5 @@ requirements.txt : Contiene los requisitos mínimos de librerías a instalar par
 vehicles_us.csv : Contiene el dataset referenciado en el proyecto
 
 
-
 URL Proyecto:
 https://project-s5.onrender.com
